@@ -1,0 +1,29 @@
+= 5.5 Migration Guide
+:toc:
+
+This guide discusses migration from Hibernate ORM version 5.4 to version 5.5.  For migration from
+earlier versions, see any other pertinent migration guides as well.
+
+== Background
+
+
+== Known changes
+
+This version is very similar to Hibernate ORM 5.4; essentially it includes all bugfixes that have been
+applied to the 5.4 maintenance releases, and on top of this it introduces support for the Jakarta Persistence
+API (in addition the the JPA APIs we already support).
+
+
+=== Dom4J based XML mapping
+
+The implementation of Hibernate's parsing of XML mapping definitions has been entirely reimplemented based on
+JAXB rather than DOM4J, making progress to remove this ancient dependency.
+No specific issues are known at this time.
+
+=== Removed the ability to disable "enhanced proxies"
+
+The "enhanced proxies" feature has been introduced as a performance improving feature in 5.3 initially, at
+which time it was optional.
+
+Since then, many more corner cases have been fixed and this feature is now always enabled. Enjoy the improvements!
+No changes are expected to be needed in user code to benefit from this.
